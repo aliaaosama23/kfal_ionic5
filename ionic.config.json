@@ -1,5 +1,7 @@
 {
   "name": "kfal_final",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

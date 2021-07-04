@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="gray">
+    <ion-buttons slot="start">
+      <ion-button >
+        <ion-icon name="earth" size="large" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="Auth_page">
+
+  <div class="Auth_Image">
+    <ion-img src="assets/imgs/loginImg.png"></ion-img>
+  </div>
+  
+  <form [formGroup]="myForm" (ngSubmit)="Login()"> 
+    
+    <div class="Auth_Form">
+      <ion-item lines="none">
+        <ion-label color="secondary" position="floating" class="ion-text-wrap">Email</ion-label>
+        <ion-input formControlName="UserEmail" placeholder="enter email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label color="secondary" position="floating" class="ion-text-wrap"> Password</ion-label>
+        <ion-input formControlName="Password"  placeholder="enter password" [type]="passwordType"></ion-input>
+        <ion-icon (click)="ShowHidePassword()" size="small"  class="ion-padding-top" [name]="passwordIcon" slot="end"> </ion-icon>
+      </ion-item>
+
+    </div>
+
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col size="8">
+        <ion-button class="ion-text-center ion-text-lowercase" color="secondary" size="small" expand="full" shape="round" type="submit">
+          <span> Login </span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="2"></ion-col>
+    </ion-row>
+
+  
+    <div class="ion-text-center ion-text-lowercase">
+      <ion-text color="primary" (click)="ForgetPassword()">
+        <h3> Forget password? </h3>
+      </ion-text>
+    </div>
+
+    <div class="ion-text-center ion-text-lowercase">
+      <ion-text color="primary" (click)="SignUp()">
+        <h2> sign up </h2>
+      </ion-text>
+    </div>
+
+    
+  </form>
+
+
+</ion-content>
